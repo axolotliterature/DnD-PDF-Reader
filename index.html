@@ -4,28 +4,38 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <title>PDF D20</title>
+  <meta name="description" content="pdf viewer with dice roller for dnd tabletop">
+  <meta name="author" content="AxolotlLiterature">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="script.js"></script>
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.3.122/pdf.min.js"></script>
 </head>
 
 <body>
-  <script src="script.js"></script>
 
-  <canvas id="pdf_canvas"></canvas>
-  <div class="container">
-    <button id="prev_page">Previous Page</button>
-    <button id="next_page">Next Page</button>
-    <span id="current_page_num"></span>
+  <div id="pdfViewer">
+    <div id="canvasContainer">
+      <canvas id="pdfCanvas"></canvas>
+    </div>
+
+  <div id="navControls">
+    <button id="prevPage">Previous Page</button>
+    <input id="currentPage" value="1" type="number"/>
+    <button id="nextPage">Next Page</button>
+    <span id="currentPageNum"></span>
         of
-    <span id="total_page_num"></span>
+    <span id="totalPageNum"></span>
 
     <input type="text" id="page_num">
     <button id="go_to_page">Go To Page</button>
+    </div>
+
+    <div id="zoomControls">
+      <button id="zoomIn">+</button>
+      <button id="zoonOut">-</button>
+    </div>
   </div>
-
-
 </body>
 </html>

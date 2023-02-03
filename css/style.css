@@ -1,0 +1,8 @@
+#canvasContainer {
+    width: 800px;
+    height: 450px;
+    overflow: auto;
+    background-color: #333;
+    text-align: center;
+    border: solid 3px;
+}
