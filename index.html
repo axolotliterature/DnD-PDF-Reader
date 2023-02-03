@@ -8,12 +8,16 @@
   <meta name="description" content="pdf viewer with dice roller for dnd tabletop">
   <meta name="author" content="AxolotlLiterature">
 
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="script.js"></script>
-  <script src=https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.3.122/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.3.122/pdf.min.js"></script>
 </head>
 
 <body>
+
+  <div id="pdfDialog">
+    <button onclick="importData()">Load PDF</button>
+  </div>
 
   <div id="pdfViewer">
     <div id="canvasContainer">

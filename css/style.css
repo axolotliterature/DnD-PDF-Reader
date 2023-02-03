@@ -6,3 +6,15 @@
     text-align: center;
     border: solid 3px;
 }
+
+#pdfDialog button {
+    background-color: #ac394e;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+}
