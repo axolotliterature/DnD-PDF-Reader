@@ -86,7 +86,7 @@ const zoomOut = () => {
     queueRenderPage(pageNum);
 };
 
-// ** BUTTON EVENTS **
+// --------------------------------------------------- ** BUTTON EVENTS **
 
 // Page Navigation
 //next and previous page buttons
