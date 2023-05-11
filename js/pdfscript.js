@@ -43,7 +43,6 @@ const renderPage = num => {
         
         //output or update current page to display
         document.querySelector('#page-num').textContent = num;
-        console.log(num);
     });
 };
 
@@ -108,7 +107,6 @@ document.querySelector('#importpdf').addEventListener('change', function(event) 
     let fileReader = new FileReader();
     fileReader.onload = function () {
         let typedarray = new Uint8Array(this.result);
-        // console.log(typedarray);
         pdfjsLib.getDocument(typedarray).promise.then(pdfDoc_ => {
             pdfDoc = pdfDoc_;
 

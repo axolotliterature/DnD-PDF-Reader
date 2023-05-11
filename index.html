@@ -114,14 +114,22 @@
     </div>
 
     <div id="roll-btn-container">
-      <button id="roll-btn" class="dice-btn">ROLL</button>
+      <button id="roll-btn" class="aux-btn">ROLL</button>
+      <button id="clear-btn" class="aux-btn">Clear Dice</button>
     </div>
 
     <div id="results">
       <h3 class="dice-title">Results</h3>
-      <span id="results-display" class="num-display">0</span>
+      <div id="results-display" class="num-display"></div>
+      <!-- roll.js creates&appends child divs to results-display: -->
+      <!-- div class: results-row, which contains 2 spans for row title and roll results -->
+      <!-- These divs are cleared each time the Roll button is pressed -->
     </div>
-    <div id="history">History</div>
+
+    <div id="history">
+      <h3 class="dice-title">History</h3>
+      <div id="history-display" class="hist-display"></div>
+    </div>
 
   </div> <!-- END SIDE BAR -->
 

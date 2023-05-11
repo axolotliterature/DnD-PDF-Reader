@@ -78,7 +78,7 @@
     border-radius: .5em;
 }
 
-/* ----------------------------- DICE ROLLER -------------------------- */
+/* ----------------------------- SIDE BAR -------------------------- */
 
 #side-bar {
     z-index: 2;
@@ -113,7 +113,7 @@
 }
 
 .dice-btn-container {
-    width: 200px;
+    width: 85%;
     margin: 0 auto;
     font-size: 1.1em;
  background-color: var(--d2);
@@ -127,6 +127,24 @@
 .dice-btn {
     padding: 0.2em;
     margin: 0.2em;
+}
+
+.aux-btn {
+    padding: 0.2em;
+    margin: 0.2em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: var(--lt1);
+    color: var(--d2);
+    border: 1px outset var(--d3);
+    border-radius: 5px;
+    transition: all ease 0.1s;
+}
+
+.aux-btn:active {
+    transform: translateY(1px);
+    border: 1px inset var(--d3);
 }
 
 .dice-title {
@@ -143,15 +161,21 @@
 
 #roll-btn-container {
     padding: 0.5em;
-    margin: 0 auto;
+    margin: 0.4em auto;
     text-align: center;
 }
 
-#results {
-    width: 100%;
+#results, #history {
+    width: 90%;
     padding: 0.2em;
     margin: 0 auto;
     text-align: center;
     background-color: var(--lt2);
     color: var(--d2);
+    border: 1px solid var(--d2);
+    border-radius: 5px;
+}
+
+#history {
+    max-height: 200px;
 }
