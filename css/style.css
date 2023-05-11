@@ -13,6 +13,8 @@
     --error: #c95318;
 }
 
+/* ------------------------------------ TOP BAR ----------------------- */
+
 #top-bar {
     position: fixed;
     width: 100%;
@@ -53,10 +55,12 @@
     transition: all ease 0.1s;
 }
 
+/* hides input, triggered via fileCover button within pdfscript.js */
 #importpdf {
     display: none;
 }
 
+/* ------------------------------------ CANVAS ------------------------------ */
 #canvasContainer {
     width: auto;
     height: auto;
@@ -72,4 +76,82 @@
     color: white;
     padding: 1em;
     border-radius: .5em;
+}
+
+/* ----------------------------- DICE ROLLER -------------------------- */
+
+#side-bar {
+    z-index: 2;
+    position: fixed;
+    height: 100%;
+    width: 0;
+    top: 0;
+    right: 0;
+    background-color: var(--d1);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+#close-button {
+    position: fixed;
+    margin-left: 203px;
+    margin-top: -60px;
+}
+
+#dice-box {
+    padding: 5px;
+    margin: 0 auto;
+    display: block;
+}
+
+#dice-box-hero {
+    position: fixed;
+    margin-left: 85px;
+    margin-top: -40px;
+    color: var(--lt2);
+}
+
+.dice-btn-container {
+    width: 200px;
+    margin: 0 auto;
+    font-size: 1.1em;
+ background-color: var(--d2);
+ color: var(--lt2);
+ border: 1px solid var(--lt2);
+ border-radius: 5px;
+ display: grid;
+ grid-template-columns: 30% 20% 20% 30%;
+}
+
+.dice-btn {
+    padding: 0.2em;
+    margin: 0.2em;
+}
+
+.dice-title {
+    padding: 0.2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.num-display {
+    padding: 0.2em;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#roll-btn-container {
+    padding: 0.5em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#results {
+    width: 100%;
+    padding: 0.2em;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--lt2);
+    color: var(--d2);
 }

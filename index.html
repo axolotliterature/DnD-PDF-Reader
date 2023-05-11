@@ -41,10 +41,89 @@
         <button class="btn" id="zoomOut">
           <i class="fa-solid fa-minus"></i>
         </button>
-    </span>
 
-    <span id="roll-"></span>
+        <button class="btn" id="activate-side-bar" onclick="triggerSideBar()">
+          <i class="fa-solid fa-dice-d20 fa-2xl"></i>
+          <i class="fa-solid fa-dice fa-2xl"></i>
+        </button>
+    </span>
   </div><!-- END top-bar -->
+
+  <div id="side-bar" class="side-bar">
+    <div id="close-button"><button id="close-side-bar" class="btn" onclick="closeSideBar()">
+      <!-- <i class="fa-solid fa-angles-right"></i> -->
+      <!-- <i class="fa-regular fa-eye-slash"></i> -->
+      <i class="fa-solid fa-eye-slash"></i>
+
+      </button>
+    </div>
+
+    <div id="dice-box">
+      <div id="dice-box-hero">
+        <i class="fa-solid fa-dice-d20 fa-2xl"></i>
+        <i class="fa-solid fa-dice fa-2xl"></i>
+      </div>
+      <div id="d2" class="dice-btn-container">
+        <h3 class="dice-title">D2</h2>
+        <button id="d2+" class="dice-btn"><i class="fa-solid fa-plus"></i></button>
+        <button id="d2-" class="dice-btn"><i class="fa-solid fa-minus"></i></button>
+        <span id="display-qd2" class="num-display">0</span>
+      </div>
+      <div id="d4" class="dice-btn-container">
+        <h3 class="dice-title">D4</h3>
+        <button id="d4+" class="dice-btn"><i class="fa-solid fa-plus"></i></button>
+        <button id="d4-" class="dice-btn"><i class="fa-solid fa-minus"></i></button>
+        <span id="display-qd4" class="num-display">0</span>
+      </div>
+      <div id="d6" class="dice-btn-container">
+        <h3 class="dice-title">D6</h3>
+        <button id="d6+" class="dice-btn"><i class="fa-solid fa-plus"></i></button>
+        <button id="d6-" class="dice-btn"><i class="fa-solid fa-minus"></i></button>
+        <span id="display-qd6" class="num-display">0</span>
+      </div>
+      <div id="d8" class="dice-btn-container">
+        <h3 class="dice-title">D8</h3>
+        <button id="d8+" class="dice-btn"><i class="fa-solid fa-plus"></i></button>
+        <button id="d8-" class="dice-btn"><i class="fa-solid fa-minus"></i></button>
+        <span id="display-qd8" class="num-display">0</span>
+      </div>
+      <div id="d10" class="dice-btn-container">
+        <h3 class="dice-title">D10</h3>
+        <button id="d10+" class="dice-btn"><i class="fa-solid fa-plus"></i></button>
+        <button id="d10-" class="dice-btn"><i class="fa-solid fa-minus"></i></button>
+        <span id="display-qd10" class="num-display">0</span>
+      </div>
+      <div id="d12" class="dice-btn-container">
+        <h3 class="dice-title">D12</h3>
+        <button id="d12+" class="dice-btn"><i class="fa-solid fa-plus"></i></button>
+        <button id="d12-" class="dice-btn"><i class="fa-solid fa-minus"></i></button>
+        <span id="display-qd12" class="num-display">0</span>
+      </div>
+      <div id="d20" class="dice-btn-container">
+        <h3 class="dice-title">D20</h3>
+        <button id="d20+" class="dice-btn"><i class="fa-solid fa-plus"></i></button>
+        <button id="d20-" class="dice-btn"><i class="fa-solid fa-minus"></i></button>
+        <span id="display-qd20" class="num-display">0</span>
+      </div>
+      <div id="d100" class="dice-btn-container">
+        <h3 class="dice-title">D100</h3>
+        <button id="d100+" class="dice-btn"><i class="fa-solid fa-plus"></i></button>
+        <button id="d100-" class="dice-btn"><i class="fa-solid fa-minus"></i></button>
+        <span id="display-qd100" class="num-display">0</span>
+      </div>
+    </div>
+
+    <div id="roll-btn-container">
+      <button id="roll-btn" class="dice-btn">ROLL</button>
+    </div>
+
+    <div id="results">
+      <h3 class="dice-title">Results</h3>
+      <span id="results-display" class="num-display">0</span>
+    </div>
+    <div id="history">History</div>
+
+  </div> <!-- END SIDE BAR -->
 
     <div id="canvasContainer">
       <canvas id="pdfCanvas"></canvas>
