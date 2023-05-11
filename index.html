@@ -4,42 +4,60 @@
 <head>
   <meta charset="utf-8">
 
-  <title>PDF D20</title>
+  <title>NAT20 PDF</title>
   <meta name="description" content="pdf viewer with dice roller for dnd tabletop">
   <meta name="author" content="AxolotlLiterature">
 
   <link rel="stylesheet" href="css/style.css">
-  <script src="script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.3.122/pdf.min.js"></script>
+  <script src="https://kit.fontawesome.com/a343b4fcac.js" crossorigin="anonymous"></script>
+ 
 </head>
 
 <body>
 
-  <div id="pdfDialog">
-    <button onclick="importData()">Load PDF</button>
-  </div>
+  <div id="top-bar">
+    <span id="pdfDialog">
+      
+        <input type="file" id="importpdf" accept=".pdf"></input>
+        <button class="btn" id="fileCover" onclick="fileBrowser()">
+        <i class="fa-solid fa-file-pdf fa-2xl"></i>
+      </button>
+    </span>
 
-  <div id="pdfViewer">
+    <span id="page-nav">
+      <button class="btn" id="prevPage">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <span class="page-info">
+        Page <span id="page-num"></span> of <span id="page-count"></span>
+      </span>
+      <button class="btn" id="nextPage">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+        <button class="btn" id="zoomIn">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <button class="btn" id="zoomOut">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+    </span>
+
+    <span id="roll-"></span>
+  </div><!-- END top-bar -->
+
     <div id="canvasContainer">
       <canvas id="pdfCanvas"></canvas>
     </div>
+  <!-- END CANVAS -->
 
-  <div id="navControls">
-    <button id="prevPage">Previous Page</button>
-    <input id="currentPage" value="1" type="number"/>
-    <button id="nextPage">Next Page</button>
-    <span id="currentPageNum"></span>
-        of
-    <span id="totalPageNum"></span>
 
-    <input type="text" id="page_num">
-    <button id="go_to_page">Go To Page</button>
-    </div>
+  <!-- SCRIPTS -->
+  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+  <script src="js/pdfscript.js"></script>
+  <script src="js/roll.js"></script>
 
-    <div id="zoomControls">
-      <button id="zoomIn">+</button>
-      <button id="zoonOut">-</button>
-    </div>
-  </div>
 </body>
 </html>
+
+

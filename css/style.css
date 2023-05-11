@@ -1,20 +1,75 @@
-#canvasContainer {
-    width: 800px;
-    height: 450px;
-    overflow: auto;
-    background-color: #333;
-    text-align: center;
-    border: solid 3px;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-#pdfDialog button {
-    background-color: #ac394e;
-    border: none;
-    color: white;
-    padding: 15px 30px;
+:root {
+    --lt1: #f1f6f9;
+    --lt2: #9ba4b5;
+    --d1: #394867;
+    --d2: #212a3e;
+    --d3: #333333;
+    --d4: #000000;
+    --error: #c95318;
+}
+
+#top-bar {
+    position: fixed;
+    width: 100%;
+    height: 2.8em;
+    background-color: var(--lt1);
+    border: 1px solid var(--d2);
+    border-radius: 0em 0em 0.5em 0.5em;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+}
+
+.btn {
+    outline: none;
+    background-color: var(--lt2);
+    padding: 0.5em;
+    margin: 0.2em 0.1em;
+    font-size: 1em;
+    font-weight: 1em;
+    color: var(--d4);
+    border: 1px outset var(--d2);
+    border-radius: 0.5em;
+    transition: all ease 0.1s;
+}
+
+.btn:active {
+    transform: translateY(1px);
+    border: 1px inset var(--d3);
+}
+
+#fileCover {
+    outline: none;
+    background-color: var(--d1);
+    padding: 0.62em 0.8em;
+    font-size: 1em;
+    font-weight: 1em;
+    color: var(--lt1);
+    border: 1px outset var(--d3);
     border-radius: 5px;
+    transition: all ease 0.1s;
+}
+
+#importpdf {
+    display: none;
+}
+
+#canvasContainer {
+    width: auto;
+    height: auto;
+    overflow: auto;
+    background-color: var(--d3);
+    text-align: center;
+    border: solid 2px;
+    border-radius: 5px;
+}
+
+.error {
+    background-color: var(--error);
+    color: white;
+    padding: 1em;
+    border-radius: .5em;
 }
