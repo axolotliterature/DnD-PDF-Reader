@@ -8,7 +8,8 @@ let pdfDoc = null,
     pageIsRendering = false,
     pageNumIsPending = null,
     scale = 1.5,
-    files;
+    files,
+    topBarExpanded = true;
 
 // const scale = 1.5;
 const canvas = document.getElementById("pdfCanvas");
@@ -85,6 +86,32 @@ const zoomOut = () => {
     queueRenderPage(pageNum);
 };
 
+// --------------------------------------------------- ** TOP BAR COLLAPSE **
+
+function triggerTopBar() {
+    if(topBarExpanded) {
+        shrinkTopBar();
+    } else {
+        expandTopBar();
+    }
+}
+function shrinkTopBar() {
+    document.getElementById("top-bar").style.width = "200px";
+    document.getElementById("pdfDialog").style.display = "none";
+    document.getElementById("page-info").style.display = "none";
+    document.getElementById("pdfCanvas").style.margin = "0 0 0 0";
+    
+    topBarExpanded = false;
+}
+function expandTopBar() {
+    document.getElementById("top-bar").style.width = "100%";
+    document.getElementById("pdfDialog").style.display = "inline-block";
+    document.getElementById("page-info").style.display = "inline-block";
+    document.getElementById("pdfCanvas").style.margin = "45px 0 0 0";
+    
+    topBarExpanded = true;
+}
+
 // --------------------------------------------------- ** BUTTON EVENTS **
 
 // Page Navigation
@@ -95,6 +122,7 @@ document.querySelector('#nextPage').addEventListener('click', showNextPage);
 //zoom in and out buttons
 document.querySelector('#zoomIn').addEventListener('click', zoomIn);
 document.querySelector('#zoomOut').addEventListener('click', zoomOut);
+
 
 //button that covers hidden input element, triggers inputpdf
 function fileBrowser() {

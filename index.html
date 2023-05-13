@@ -9,14 +9,19 @@
   <meta name="author" content="AxolotlLiterature">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="d20favicon.png">
   <script src="https://kit.fontawesome.com/a343b4fcac.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
   <div id="top-bar">
+    <span id="collapse-btn-container">
+      <button id="collapse-btn" class="btn" onclick="triggerTopBar()">
+        <i class="fa-solid fa-caret-up"></i>
+      </button>
+    </span>
+
     <span id="pdfDialog">
-      
         <input type="file" id="importpdf" accept=".pdf"></input>
         <button class="btn" id="fileCover" onclick="fileBrowser()">
         <i class="fa-solid fa-file-pdf fa-2xl"></i>
@@ -27,18 +32,18 @@
       <button class="btn" id="prevPage">
         <i class="fa-solid fa-arrow-left"></i>
       </button>
-      <span class="page-info">
+      <span id="page-info">
         Page <span id="page-num"></span> of <span id="page-count"></span>
       </span>
       <button class="btn" id="nextPage">
         <i class="fa-solid fa-arrow-right"></i>
       </button>
 
-        <button class="btn" id="zoomIn">
-          <i class="fa-solid fa-plus"></i>
-        </button>
         <button class="btn" id="zoomOut">
           <i class="fa-solid fa-minus"></i>
+        </button>
+        <button class="btn" id="zoomIn">
+          <i class="fa-solid fa-plus"></i>
         </button>
 
         <button class="btn" id="activate-side-bar" onclick="triggerSideBar()">
