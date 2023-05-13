@@ -1,2 +1,7 @@
 # pdf_roller
- pdf reader with dice rolling
+Browser based PDF reader with sidebar for Dice roll simulations
+
+TODO:
+history display functionality,
+
+pdf search by page number
