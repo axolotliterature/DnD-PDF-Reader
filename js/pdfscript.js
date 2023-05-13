@@ -100,6 +100,7 @@ function shrinkTopBar() {
     document.getElementById("pdfDialog").style.display = "none";
     document.getElementById("page-info").style.display = "none";
     document.getElementById("pdfCanvas").style.margin = "0 0 0 0";
+    document.getElementById("top-bar-caret").className="fa-solid fa-chevron-down";
     
     topBarExpanded = false;
 }
@@ -108,6 +109,7 @@ function expandTopBar() {
     document.getElementById("pdfDialog").style.display = "inline-block";
     document.getElementById("page-info").style.display = "inline-block";
     document.getElementById("pdfCanvas").style.margin = "45px 0 0 0";
+    document.getElementById("top-bar-caret").className="fa-solid fa-chevron-up";
     
     topBarExpanded = true;
 }

@@ -17,7 +17,7 @@
   <div id="top-bar">
     <span id="collapse-btn-container">
       <button id="collapse-btn" class="btn" onclick="triggerTopBar()">
-        <i class="fa-solid fa-caret-up"></i>
+        <i id="top-bar-caret" class="fa-solid fa-chevron-up"></i>
       </button>
     </span>
 
@@ -45,22 +45,22 @@
         <button class="btn" id="zoomIn">
           <i class="fa-solid fa-plus"></i>
         </button>
-
-        <button class="btn" id="activate-side-bar" onclick="triggerSideBar()">
-          <i class="fa-solid fa-dice-d20 fa-2xl"></i>
-          <i class="fa-solid fa-dice fa-2xl"></i>
-        </button>
     </span>
   </div><!-- END top-bar -->
 
-  <div id="side-bar" class="side-bar">
-    <div id="close-button"><button id="close-side-bar" class="btn" onclick="closeSideBar()">
-      <!-- <i class="fa-solid fa-angles-right"></i> -->
-      <!-- <i class="fa-regular fa-eye-slash"></i> -->
-      <i class="fa-solid fa-eye-slash"></i>
+    <button class="btn" id="side-bar-btn" onclick="triggerSideBar()">
+      <i id="side-bar-btn-caret" class="fa-solid fa-chevron-left fa-xl"></i>
+      <!-- <i id="side-bar-btn-dice1" class="fa-solid fa-dice-d20 fa-2xl"></i> -->
+      <i id="side-bar-btn-dice2" class="fa-solid fa-dice fa-2xl"></i>
+    </button>
 
+  <div id="side-bar" class="side-bar">
+    <!-- <div id="close-button"><button id="close-side-bar" class="btn" onclick="closeSideBar()">
+      <i class="fa-solid fa-angles-right"></i>
+      <i class="fa-regular fa-eye-slash"></i>
+      <i class="fa-solid fa-eye-slash"></i>
       </button>
-    </div>
+    </div> -->
 
     <div id="dice-box">
       <div id="dice-box-hero">
