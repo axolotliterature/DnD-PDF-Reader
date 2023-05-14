@@ -13,6 +13,15 @@
     --error: #c95318;
 }
 
+html, body {
+    height: 100%;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+}
+
 /* ------------------------------------ TOP BAR ----------------------- */
 
 #top-bar {
@@ -71,12 +80,13 @@
 /* ------------------------------------ CANVAS ------------------------------ */
 #canvasContainer {
     width: auto;
-    height: auto;
+    height: 100%;
     overflow: auto;
-    background-color: var(--d3);
+    /* background-color: var(--d3); */
+    background-image: url(/low-poly-grid-haikei.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
-    border: solid 2px;
-    border-radius: 5px;
 }
 
 #pdfCanvas {
@@ -107,12 +117,6 @@
     border: none;
     border-radius: 10px 0 0 10px;
 }
-
-/* #close-button {
-    position: fixed;
-    margin-left: 203px;
-    margin-top: -60px;
-} */
 
 #side-bar-btn {
     position: fixed;
