@@ -5,6 +5,7 @@ let typedarray;
 
 let pdfDoc = null,
     pageNum = 1,
+    goToNum = 1,
     pageIsRendering = false,
     pageNumIsPending = null,
     scale = 1.5,
@@ -43,7 +44,8 @@ const renderPage = num => {
         });
         
         //output or update current page to display
-        document.querySelector('#page-num').textContent = num;
+        // document.querySelector('#page-num').textContent = num;
+        document.getElementById("pageSelector").value = num;
     });
 };
 
@@ -73,6 +75,26 @@ const showNextPage = () => {
     pageNum++;
     queueRenderPage(pageNum);
 };
+
+//go to page
+// const goToPage = () => {
+//     goToNum = document.getElementById("pageSelector").value;
+//     if(goToNum > pdfDoc.numPages || goToNum < 1) {
+//         return;
+//     }
+//     queueRenderPage(goToNum);
+// };
+
+function goToPage() {
+    // pageNum = formData.pageNum;
+
+    pageNum = document.getElementById("pageSelector").value;
+    if(pageNum > pdfDoc.numPages || pageNum < 1) {
+        return;
+    }
+    console.log(pageNum);
+    queueRenderPage(pageNum);
+}
 
 //zoom in
 const zoomIn = () => {
@@ -120,6 +142,9 @@ function expandTopBar() {
 //next and previous page buttons
 document.querySelector('#prevPage').addEventListener('click', showPrevPage);
 document.querySelector('#nextPage').addEventListener('click', showNextPage);
+
+document.getElementById("pageSelector").addEventListener('change', function(){goToPage()});
+// document.querySelector('#pageSelector').addEventListener('change', goToPage);
 
 //zoom in and out buttons
 document.querySelector('#zoomIn').addEventListener('click', zoomIn);
