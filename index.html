@@ -144,8 +144,14 @@
 
 
   <!-- SCRIPTS -->
-  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+  <!-- <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script> -->
+   <!-- The above is deprecated, noted here: https://github.com/mozilla/pdf.js/issues/12643
+    "Never link to this URL since it changes on every commit to master and may therefore be unstable" -->
+    <!-- Keep this note here, paired with note in pdfscript.js so that others running into this error can be pointed in a helpful direction -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.5.207/pdf.min.js"></script>
+  <!-- <script src="js/pdfrender.js"></script> -->
   <script src="js/pdfscript.js"></script>
+  <script src="js/sidebar.js"></script>
   <script src="js/roll.js"></script>
 
 </body>

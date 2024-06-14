@@ -16,7 +16,14 @@ let pdfDoc = null,
 const canvas = document.getElementById("pdfCanvas");
 const ctx = canvas.getContext("2d");
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
+var { pdfjsLib } = globalThis;
+
+//first option is pdf.js version 2+, lower commented out option is version 1.9- and is removed for version 2+
+//third option is cloudfare link matched to script in html
+// pdfjsLib.GlobalWorkerOptions.workerSrc = '../../node_modules/pdfjs-dist/build/pdf.worker.mjs';
+// pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+  'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.5.207/pdf.worker.min.js';
 
 // render the page
 const renderPage = num => {
@@ -75,15 +82,6 @@ const showNextPage = () => {
     pageNum++;
     queueRenderPage(pageNum);
 };
-
-//go to page
-// const goToPage = () => {
-//     goToNum = document.getElementById("pageSelector").value;
-//     if(goToNum > pdfDoc.numPages || goToNum < 1) {
-//         return;
-//     }
-//     queueRenderPage(goToNum);
-// };
 
 function goToPage() {
     // pageNum = formData.pageNum;
@@ -151,12 +149,14 @@ document.querySelector('#zoomIn').addEventListener('click', zoomIn);
 document.querySelector('#zoomOut').addEventListener('click', zoomOut);
 
 
-//button that covers hidden input element, triggers inputpdf
+//button that covers a hidden input element, triggers inputpdf when button 'pressed'
+//if this hidden element is removed, file input will not work properly
+//button element stays for functionality and accessibility
 function fileBrowser() {
     document.getElementById('importpdf').click();
 };
 
-//importpdf input imports file type pdf and renders page
+//html button id=importpdf prompts user input, imports file type pdf and renders page
 document.querySelector('#importpdf').addEventListener('change', function(event) {
     let file = event.target.files[0];
     let fileReader = new FileReader();
