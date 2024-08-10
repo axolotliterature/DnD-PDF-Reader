@@ -65,28 +65,6 @@ let d100 = {
     }
 }
 
-// ----------------------- SIDE BAR -----------------------------
-
-// function triggerSideBar() {
-//     if(sideBarIsOpen) {
-//         closeSideBar();
-//     } else {
-//         openSideBar();
-//     }
-// }
-// function openSideBar() {
-//     document.getElementById("side-bar").style.width = "250px";
-//     document.getElementById("side-bar-btn").style.right = "165px";
-//     document.getElementById("side-bar-btn-caret").className= "fa-solid fa-chevron-right fa-xl";
-//     sideBarIsOpen = true;
-// }
-// function closeSideBar() {
-//     document.getElementById("side-bar").style.width = 0;
-//     document.getElementById("side-bar-btn").style.right = "5px";
-//     document.getElementById("side-bar-btn-caret").className= "fa-solid fa-chevron-left fa-xl";
-//     sideBarIsOpen = false;
-// }
-
 // ------------------------- DICE BOX QUANTITY HANDLERS -------------------
 
 //addDie and minusDie functions run die button inputs through a switch which then
@@ -291,7 +269,10 @@ function rollTray() {
     if(numDice[7] > 0) { // --------------------------------------------- NEEDS MOD TO ROUND NEAREST TENTH
         diceType = "D100";
         for (let i = numDice[7]; i > 0; i--) {
-            roll = d100.roll();
+            roll = (d100.roll()%10)*10;
+            if (roll == 0) {
+                roll = 100;
+            }
             temp = new Object();
             temp["diceRolled"] = diceType;
             temp["rollResult"] = roll;
