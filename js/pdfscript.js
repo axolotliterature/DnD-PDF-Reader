@@ -83,6 +83,7 @@ const showNextPage = () => {
     queueRenderPage(pageNum);
 };
 
+//takes input value from the text input on change, compares to page min/max of document, converts text to int and submits page number to be rendered
 const goToPage = () => {
     const input = document.getElementById("pageSelector");
     const inputValue = input.value;
