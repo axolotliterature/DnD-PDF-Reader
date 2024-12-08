@@ -83,15 +83,17 @@ const showNextPage = () => {
     queueRenderPage(pageNum);
 };
 
+//takes input value from the text input on change, compares to page min/max of document, converts text to int and submits page number to be rendered
 const goToPage = () => {
     const input = document.getElementById("pageSelector");
-    const inputValue = input.value;
-    if(inputValue > pdfDoc.numPages || inputValue < 1) {
-        return;
+    const inputValue = Number(input.value);
+    if (typeof inputValue == "number") {
+        if (inputValue <= pdfDoc.numPages && inputValue >= 1) {
+            pageNum = inputValue;
+            queueRenderPage(pageNum);
+        }
     }
-    pageNum = Number(inputValue);
-    queueRenderPage(pageNum);
-    // console.log(inputValue);
+    return;
 };
 
 //zoom in
