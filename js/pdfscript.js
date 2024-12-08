@@ -51,7 +51,6 @@ const renderPage = num => {
         });
         
         //output or update current page to display
-        // document.querySelector('#page-num').textContent = num;
         document.getElementById("pageSelector").value = num;
     });
 };
@@ -62,6 +61,7 @@ const queueRenderPage = num => {
         pageNumIsPending = num;
     } else {
         renderPage(num);
+        // console.log(num);
     }
 };
 
@@ -83,16 +83,16 @@ const showNextPage = () => {
     queueRenderPage(pageNum);
 };
 
-function goToPage() {
-    // pageNum = formData.pageNum;
-
-    pageNum = document.getElementById("pageSelector").value;
-    if(pageNum > pdfDoc.numPages || pageNum < 1) {
+const goToPage = () => {
+    const input = document.getElementById("pageSelector");
+    const inputValue = input.value;
+    if(inputValue > pdfDoc.numPages || inputValue < 1) {
         return;
     }
-    console.log(pageNum);
+    pageNum = Number(inputValue);
     queueRenderPage(pageNum);
-}
+    // console.log(inputValue);
+};
 
 //zoom in
 const zoomIn = () => {
@@ -141,8 +141,8 @@ function expandTopBar() {
 document.querySelector('#prevPage').addEventListener('click', showPrevPage);
 document.querySelector('#nextPage').addEventListener('click', showNextPage);
 
-document.getElementById("pageSelector").addEventListener('change', function(){goToPage()});
-// document.querySelector('#pageSelector').addEventListener('change', goToPage);
+//Page selector by text field input trigger
+document.querySelector('#pageSelector').addEventListener('change', goToPage);
 
 //zoom in and out buttons
 document.querySelector('#zoomIn').addEventListener('click', zoomIn);
